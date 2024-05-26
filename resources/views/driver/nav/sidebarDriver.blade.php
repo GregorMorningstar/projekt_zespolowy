@@ -8,6 +8,12 @@
                 {{ __('Historia zlecen') }}
             </x-nav-link>
 
+            <x-nav-link :href="route('driver.calendar')" :active="request()->routeIs('driver.calendar')" class="ml-4">
+                {{ __('Kalendarz zlecen') }}
+            </x-nav-link>
+{{--            <x-nav-link :href="route('driver.calendar')" :active="request()->routeIs('driver.calendar')" class="ml-4">--}}
+{{--                {{ __('Kalendarz zlecen') }}--}}
+{{--            </x-nav-link>--}}
         </div>
     </div>
 </div>

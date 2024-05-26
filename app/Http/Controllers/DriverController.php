@@ -37,6 +37,19 @@ class DriverController extends Controller
         return view('driver.history', ['user_id' => $userId, 'order_data' => $orderData]);
     }
 
+
+    public function calendar() {
+        $userId = Auth::id();
+
+        // Fetch all orders for the authenticated user
+        $orderData = order_user::where('user_id', $userId)
+            ->with('order', 'user')
+            ->get();
+
+        return view('driver.calendar', ['id' => $userId, 'orders' => $orderData]);
+    }
+
+
     public function details($id)
     {
         // Tutaj możesz dodać logikę dotyczącą szczegółów danego zlecenia na podstawie jego ID

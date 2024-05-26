@@ -73,6 +73,12 @@ Route::middleware(['can:isForwarder'])->group(function (){
         Route::get('/driver/history', [DriverController::class, 'history'])->name('driver.history');
         Route::get('/driver/details', [DriverController::class, 'details'])->name('driver.details');
         Route::get('/driver/details/{id}', [DriverController::class, 'details_one'])->name('driver.details_one');
+
+        Route::get('driver/calendar', [DriverController::class ,'calendar'])->name('driver.calendar');
+
+
+
+
         Route::post('/driver/change-order-status',[DriverController::class,'chanegeStatus'])->name('driver.changeStatus');
 
     });
